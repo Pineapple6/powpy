@@ -20,3 +20,7 @@ proof_of_work() is not the only method contained in this module. Here's an expla
 * **random_hash()**: Returns a random SHA-256 hash.
 * **random_string()**: Returns a random string, with also a random length (From 1 to 1000 chars).
 * **make_hash(string)**: Converts a string into a SHA-256 hash.
+
+## **How to use it**
+**From pip:** ```pip install powpy```
+**From github repository:** Download and run setup.py

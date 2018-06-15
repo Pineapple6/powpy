@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="powpy",
-    version="0.0.1",
+    version="0.1.0",
     author="Pinneaple6",
     author_email="",
-    description="A simple proof of work using MD5 hashes",
+    description="A simple proof of work using SHA-256 hashes",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Pineapple6/powpy",

@@ -11,7 +11,7 @@ setuptools.setup(
     description="A simple proof of work using MD5 hashes",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/Pineapple6/powpy",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",

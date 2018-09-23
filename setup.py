@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="powpy",
-    version="0.1.0",
+    version="0.1.1",
     author="Pinneaple6",
     author_email="",
     description="A simple proof of work using SHA-256 hashes",

@@ -4,18 +4,8 @@ A very simple Proof of work module, using SHA-256 hashes
 from re import match
 from random import choice, randrange, getrandbits
 import hashlib
-from string import ascii_letters, digits
 
-chars = ascii_letters + digits #abcde12345... etc.
-
-def random_string():
-    '''
-    Return a random string, with a length from 1 to 1000 chars
-    '''
-    string = ''
-    for i in range(randrange(1, 1000)):# random length
-        string += choice(chars)# random chars
-    return string
+chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'a', 'b', 'c', 'd', 'e', 'f']# Hexadecimal
 
 def make_hash(text):
     '''
@@ -29,7 +19,11 @@ def random_hash():
     '''
     Generate a random SHA-256 hash
     '''
-    return make_hash(random_string())
+    rand_hash = ''
+    for i in range(64):
+        rand_hash += choice(chars)
+    return rand_hash
+
 
 def proof_of_work(initial_hash, difficult):
     '''
@@ -41,7 +35,7 @@ def proof_of_work(initial_hash, difficult):
     work = random_hash()# First attempt
     tries = 1
     while True:
-        while not( match( difficult, make_hash( str(work + initial_hash) ) ) ):# Repeats until find a valid hash
+        while not( match( difficult, make_hash( str(initial_hash + work) ) ) ):# Repeats until find a valid hash
             work = random_hash()
             tries += 1
         return work, make_hash( str(initial_hash + work) ), tries# Once the hash matches the requirements, return data
